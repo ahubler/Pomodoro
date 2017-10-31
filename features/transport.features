@@ -1,0 +1,28 @@
+Feature: User can controll the counting down of the timer
+	As a user
+	I want to be able to stop and start the timer
+	So I can use it to maintain consistent work break and rest intervals
+
+	Scenario: Start the timer
+		Given I have the timer page open
+		And the timer is not running
+		When I click the play button
+		Then the timer will begin counting down the time remaining
+
+	Scenario: Pause the timer
+		Given I have the timer page open
+		And the timer is running
+		When I click the pause button
+		Then the timer will stop counting down
+
+	Scenario: Stop the timer
+		Given I have the timer page open
+		And the timer is running
+		When I click the stop button
+		Then the timer will stop counting down 
+		And the time remaining will be reset to the full work interval duration
+
+	Scenario: Reset the timer
+		Given I have the timer page open
+		When I click the reset button
+		Then the time remaining on the timer will be reset to the full duration of the active interval
