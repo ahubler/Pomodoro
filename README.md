@@ -2,21 +2,6 @@
 A simple Pomodoro timer
 
 Todo: 
--Position elements
-	-Interval controls
-	-Main display
-	-Transport controls
-
--Style elements
-	-Background
-	-Containers
-	-Interval controls
-		-Displays
-		-Buttons
-	-Main display
-	-Transport controls
-		-Buttons
-
 -Make the buttons do things (Write test for these)
 	-work_inc should increase work duration
 	-work_dec should decrease work duration
