@@ -93,4 +93,5 @@
 #clock{
 	padding: 8px 0px 13px 0px;
 	font: 115px monospace, bold;
+	overflow: visible;
 }
