@@ -1,6 +1,6 @@
-var workDuration = 1;
-var breakDuration = 1;
-var restDuration = 1;
+var workDuration = 20;
+var breakDuration = 5;
+var restDuration = 15;
 var running = false;
 var currentInterval = "Work";
 var secondsRemaining = 0;
@@ -43,6 +43,78 @@ function stopTimer(){
 	running = false;
 
 	resetTimer();
+
+}
+
+// The decreaseInterval function decreases the interval length for the given interval
+// Minimum interval length is 1
+function decreaseInterval(interval){
+
+switch (interval) {
+    case "Work" :
+      
+      if(workDuration > 1){
+
+      	workDuration--;
+
+      }
+      break;
+      
+    case "Break" :
+      
+      if(breakDuration > 1){
+
+      	breakDuration--;
+
+      }
+      break;
+
+    case "Rest" :
+      
+      if(restDuration > 1){
+
+      	restDuration--;
+
+      }
+      break;
+
+  }
+
+}
+
+// The increaseInterval function decreases the interval length for the given interval
+// Maximum interval length is 60
+function increaseInterval(interval){
+
+switch (interval) {
+    case "Work" :
+      
+      if(workDuration < 60){
+
+      	workDuration++;
+
+      }
+      break;
+      
+    case "Break" :
+      
+      if(breakDuration < 60){
+
+      	breakDuration++;
+
+      }
+      break;
+
+    case "Rest" :
+      
+      if(restDuration < 60){
+
+      	restDuration++;
+
+      }
+      break;
+
+  }
 
 }
 
@@ -158,6 +230,42 @@ $(document).ready(function(){
   $("#reset_button").click(function() {
 
     resetTimer();
+
+  });
+
+  $("#work_increase").click(function() {
+
+    increaseInterval("Work");
+
+  });
+
+  $("#rest_increase").click(function() {
+
+    increaseInterval("Rest");
+
+  });
+
+  $("#break_increase").click(function() {
+
+    increaseInterval("Break");
+
+  });
+
+  $("#work_decrease").click(function() {
+
+    decreaseInterval("Work");
+
+  });
+
+  $("#rest_decrease").click(function() {
+
+    decreaseInterval("Rest");
+
+  });
+
+  $("#break_decrease").click(function() {
+
+    decreaseInterval("Break");
 
   });
 
