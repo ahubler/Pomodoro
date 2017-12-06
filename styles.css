@@ -1,3 +1,32 @@
+body.work{
+	background-size: 100% auto;
+	background: #1c92d2 no-repeat fixed center;
+    background: -webkit-linear-gradient(to bottom, #f2fcfe, #1c92d2) no-repeat fixed center;
+    background: linear-gradient(to bottom, #f2fcfe, #1c92d2) no-repeat fixed center; 
+}
+
+body.break{
+	background-size: 100% auto;
+	background: #355C7D no-repeat fixed center;
+    background: -webkit-linear-gradient(to bottom, #C06C84, #6C5B7B, #355C7D) no-repeat fixed center;
+    background: linear-gradient(to bottom, #C06C84, #6C5B7B, #355C7D) no-repeat fixed center; 
+}
+
+body.rest{
+	background-size: 100% auto;
+	background: #0B486B no-repeat fixed center;
+    background: -webkit-linear-gradient(to bottom, #F56217, #0B486B) no-repeat fixed center;
+    background: linear-gradient(to bottom, #F56217, #0B486B) no-repeat fixed center; 
+}
+
+body{
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.button, .display{
+	font-family: "Lucida Console", "Lucida Sans Typewriter", monaco, "Bitstream Vera Sans Mono", monospace;
+}
 #container{
 	border: solid 1px;
 	position: relative;
@@ -16,12 +45,15 @@
 
 #timer_display{
 	font-color: white;
-	background-color: black;
+	background: #000000;
+    background: -webkit-linear-gradient(to top, #000000, #434343);
+    background: linear-gradient(to top, #000000, #434343);
 	height: 192px;
+	font-weight: 500;
 }
 
 .control_container{
-	background: gray;
+	background: #a9aeb2;
 }
 
 #interval_controls{
@@ -55,8 +87,9 @@
 
 #timer_controls .button{
 	width: 25%;
+	height: 100%;
 	padding-top: 3px;
-	font: 20px monospace, bold;
+	font-size: 20px;
 }
 
 .control_group .button{
@@ -64,17 +97,19 @@
 	margin: 0;
 	padding: 0;
 	float: left;
-	font: 17px monospace, bold;
+	font-size: 17px;
+		height: 100%;
 }
 
 .control_group .interval_title{
 	padding: 1px 0px;
-	font: 20px monospace,bold;
+	font-size: 20px;
 }
 
 .control_group .display{
 	padding: 3px 0px;
-	font: 22px monospace, bold;
+	font-size: 22px;
+	font-weight: 500;
 }
 
 #timer_display .display{
@@ -87,11 +122,28 @@
 
 #active_interval_title{
 	padding-top: 8px;
-	font: 22px monospace, bold;
+	font-size: 22px;
 }
 
 #clock{
 	padding: 8px 0px 13px 0px;
-	font: 115px monospace, bold;
+	font-size: 115px;
 	overflow: visible;
 }
+
+.button{
+
+	background: #bdc3c7;
+    background: -webkit-linear-gradient(to top, #2c3e50, #bdc3c7);
+    background: linear-gradient(to top, #2c3e50, #bdc3c7);
+}
+
+/*.button:hover{
+
+	border: solid .25px;
+	background: #AAAFB3;
+    background: -webkit-linear-gradient(to top, #2c3e50, #AAAFB3);
+    background: linear-gradient(to top, #2c3e50, #AAAFB3);
+    cursor: default;
+}*/
+

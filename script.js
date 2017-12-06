@@ -6,6 +6,7 @@ var currentInterval = "Work";
 var secondsRemaining = 0;
 var breakCounter = 0;
 
+
 // The getStatus function returns the current timer status.
 function getStatus(){
 
@@ -56,6 +57,7 @@ switch (interval) {
       if(workDuration > 1){
 
       	workDuration--;
+        document.getElementById("work_display").innerHTML = workDuration;
 
       }
       break;
@@ -65,6 +67,7 @@ switch (interval) {
       if(breakDuration > 1){
 
       	breakDuration--;
+        document.getElementById("break_display").innerHTML = breakDuration;
 
       }
       break;
@@ -74,6 +77,7 @@ switch (interval) {
       if(restDuration > 1){
 
       	restDuration--;
+        document.getElementById("rest_display").innerHTML = restDuration;
 
       }
       break;
@@ -92,6 +96,7 @@ switch (interval) {
       if(workDuration < 60){
 
       	workDuration++;
+        document.getElementById("work_display").innerHTML = workDuration;
 
       }
       break;
@@ -101,6 +106,7 @@ switch (interval) {
       if(breakDuration < 60){
 
       	breakDuration++;
+        document.getElementById("break_display").innerHTML = breakDuration;
 
       }
       break;
@@ -110,6 +116,7 @@ switch (interval) {
       if(restDuration < 60){
 
       	restDuration++;
+        document.getElementById("rest_display").innerHTML = restDuration;
 
       }
       break;
@@ -194,6 +201,29 @@ function getTimeString(){
 
 }
 
+function setBackground(interval){
+  switch (interval) {
+    case "Work" :
+      
+      document.body.className = "work";
+      break;
+      
+    case "Break" :
+
+      document.body.className = "break";
+      break;
+
+    case "Rest" :
+
+      document.body.className = "rest";
+      break;
+
+  }
+
+
+
+}
+
 
 // The updateDisplay function updates the clock element with the latest time.
 function updateDisplay(){
@@ -206,6 +236,7 @@ function updateDisplay(){
 
 $(document).ready(function(){
 
+  setBackground(currentInterval);
 	secondsRemaining = getIntervalLength(currentInterval);
 	updateDisplay();
 
@@ -277,8 +308,10 @@ $(document).ready(function(){
 
   				// When the timer reaches 0, get the length of the next interval 
   				// and update secondsRemaining.
-  				currentInterval = getNextInterval()
+  				currentInterval = getNextInterval();
   				secondsRemaining = getIntervalLength(currentInterval);
+          document.getElementById("active_interval_title").innerHTML = currentInterval;
+          setBackground(currentInterval);
 
   		}
 
