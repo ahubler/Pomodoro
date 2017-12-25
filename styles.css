@@ -70,7 +70,7 @@ body{
 .control_group{
 	position: relative;
 	display: inline-block;
-	width: 33%;
+	width: 33.333%;
 	padding: 0px;
 	margin: 2px 1px;
 	height: 71px;
